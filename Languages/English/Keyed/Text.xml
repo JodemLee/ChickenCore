@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+
+<!-- General -->
+	
+	<GeneralEnlistLetterTitle>{FACTION_name}: Enlisted</GeneralEnlistLetterTitle>
+	
+	<GeneralEnlistButtonLabel>Enlist with {FACTION_name}</GeneralEnlistButtonLabel>
+
+	<GeneralEnlistButtonDesc>Sign a new contract with {FACTION_name}.</GeneralEnlistButtonDesc>
+
+	<GeneralEnlistedWithKey>Enlisted with: {FACTION_name}</GeneralEnlistedWithKey>
+	
+	<GeneralMissionsLabel>Missions</GeneralMissionsLabel>
+
+	<GeneralMissionsDesc>Missions description</GeneralMissionsDesc>
+
+	<GeneralMenuMissionsSelectQuest>Select a Mission: </GeneralMenuMissionsSelectQuest>
+
+	<GeneralMenuMissionsStartQuest>Start Quest ({0})</GeneralMenuMissionsStartQuest>
+
+	<General.Cancel>Cancel</General.Cancel>
+
+	<GeneralNoEnoughMoney>Not enough money</GeneralNoEnoughMoney>
+	
+	<GeneralStorageLabel>Storage</GeneralStorageLabel>
+
+	<GeneralStorageDesc>Store items from your caravan to your faction stash. Faction stashes transfer across all of the faction's outposts and will save contents even if you are no longer enlisted.</GeneralStorageDesc>
+	
+	<GeneralDropPodServiceLabel>Drop Pod service</GeneralDropPodServiceLabel>
+
+	<GeneralDropPodServiceDesc>Use this faction's drop pod service to travel by air! $1000 cost.</GeneralDropPodServiceDesc>
+
+	<GeneralDropPodServiceRequirementDesc>You need $1000 silver to cover all expenses.</GeneralDropPodServiceRequirementDesc>
+	
+	<General.StorageInventory>Storage inventory</General.StorageInventory>
+
+	<General.CaravanInventory>Caravan inventory</General.CaravanInventory>
+	
+	<General.ActiveEnlistOptions>Active enlist options</General.ActiveEnlistOptions>
+	
+	<GeneralSalaryLabel>Salary</GeneralSalaryLabel>
+
+	<GeneralSalaryDesc>You are entitled to claim payment from this faction every 15 days.</GeneralSalaryDesc>		
+	
+	<GeneralMedicalTrainingLabel>Training: Medical</GeneralMedicalTrainingLabel>
+
+	<GeneralMedicalTrainingDesc>Train your caravan with hourly experience gain on the following skills:\n\n- Medical\n- Social\n- Intellectual\n\nHourly experience gain stops when this faction is resting at night.</GeneralMedicalTrainingDesc>
+
+	<GeneralShootingTrainingLabel>Training: Combat</GeneralShootingTrainingLabel>
+
+	<GeneralShootingTrainingDesc>Train your caravan with hourly experience gain on the following skills:\n\n- Shooting\n- Melee\n\nHourly experience gain stops when this faction is resting at night.</GeneralShootingTrainingDesc>	
+
+	<GeneralSurvivalTrainingLabel>Training: Survival</GeneralSurvivalTrainingLabel>
+
+	<GeneralSurvivalTrainingDesc>Train your caravan with hourly experience gain on the following skills:\n\n- Animals\n- Construction\n- Cooking\n- Crafting\n- Plants\n\nHourly experience gain stops when this faction is resting at night.</GeneralSurvivalTrainingDesc>
+
+	<GeneralTurnInLabel>Turn in</GeneralTurnInLabel>
+
+	<GeneralReinforcementsButtonLabel>Reinforcements</GeneralReinforcementsButtonLabel>
+
+	<GeneralReinforcementsButtonDesc>Call for reinforcements from your enlisted faction. Amount of troops they send depend on your current relations.</GeneralReinforcementsButtonDesc>
+
+	<GeneralResignLetterTitle>Resigned</GeneralResignLetterTitle>
+
+	<GeneralResignButtonLabel>Resign</GeneralResignButtonLabel>
+
+    <GeneralResignButtonDesc>leave active duty from this faction</GeneralResignButtonDesc>
+
+    <General.PlayerSettlementRequired>Player's settlement required</General.PlayerSettlementRequired>
+
+	<GeneralEnlistedToHostileFaction>cannot join because you are enlisted with their enemy, {HOSTILEFACTION_name}</GeneralEnlistedToHostileFaction>
+	
+	<GeneralKickOutLetterTitle>Kicked out</GeneralKickOutLetterTitle>
+
+	<GeneralProvisionsLabel>Provisions</GeneralProvisionsLabel>
+
+	<GeneralKickOutLabelTitle>An order for your enlistment's immediate termination from service has been filed by {LEADER_nameDef}. You have been kicked out from {FACTION_name}.</GeneralKickOutLabelTitle>
+	
+<!-- Outlanders -->
+
+	<OutlanderEnlistLetterLabel>To Our Newest Recruit,
+
+Welcome to {FACTION_name}. Life out here isn’t easy, but with grit and determination, there’s a lot you can achieve. You’ve joined an organization built on hard work and trust—qualities we expect from every Settler under our banner.
+
+Our outposts are more than waystations; they’re lifelines. Stop by to restock on supplies, pick up your pay, and make use of the tools and facilities we’ve set up to keep you alive and capable. We look after our own, but remember: loyalty is earned, not given.
+
+Out here, your actions matter. Carry yourself with honor, respect the locals, and do what it takes to get the job done.
+
+The frontier has its dangers, but it also has its rewards. Go out there and make us proud.
+
+— {LEADER_nameDef}
+Leader of {FACTION_name}</OutlanderEnlistLetterLabel>
+
+	<OutlanderEnlistRequrementsNotSatisfied>You need to have minimum 50 goodwill, currently you have only {0} goodwill.</OutlanderEnlistRequrementsNotSatisfied>
+	
+	<OutlanderMenuMissionsDesc>You step into a rugged outpost office, the air thick with dust and purpose. A worn board displays reports of raids, missing persons, and frontier dangers, waiting for someone to take action.</OutlanderMenuMissionsDesc>
+
+
+	<OutlanderProvisionsDesc>Provisions will give your caravan inventory the following every 24 hours:\n\n- ×2 Packaged survival meals\n- ×1 Medicine\n- x10 Chocolate\n- ×20 Hay</OutlanderProvisionsDesc>
+
+	<OutlanderTurnInTraderName>Outlander Holding Facility</OutlanderTurnInTraderName>
+
+	<OutlanderProvisionsLabelApparelIssue>Guard Loadout</OutlanderProvisionsLabelApparelIssue>
+
+	<OutlanderProvisionsDescApparelIssue>Guard Loadout will give your caravan inventory the following every 25 days:\n\n- ×1 Steel knife \n- ×1 Bolt action rifle \n- ×1 Duster \n- ×1 Button-down shirt \n- ×1 Flak vest\n- ×1 Steel flak helmet\n- ×1 Flak pants</OutlanderProvisionsDescApparelIssue>	
+		
+	<OutlanderPartTimeJobLabel>Part-Time Job</OutlanderPartTimeJobLabel>
+
+	<OutlanderPartTimeJobDesc>Earn $5 an hour working part-time with this outpost. Earnings are halted when the faction is resting at night.</OutlanderPartTimeJobDesc>	
+	
+	<OutlanderHospitalLabel>Hospital</OutlanderHospitalLabel>
+
+	<OutlanderHospitalDesc>Check in with the hospital of this outpost. This service tends to all of your caravan members with industrial medicine. Immunity gain is also increased while your caravan is using the hospital.</OutlanderHospitalDesc>
+
+	<OutlanderTurnInDesc>Turn in suspected outlaws to holding facilities for trial in Outlander court.\n\nTurning over any hostile pawns do not result in a slavery debuff.</OutlanderTurnInDesc>	
+
+	<OutlanderResignLetterLabel>You have successfully resigned from {FACTION_name}. (-25 relations)</OutlanderResignLetterLabel>
+	
+	<OutlanderResignMenuText>You will resign from the Outlanders, effective immediately. (-25 in relations)</OutlanderResignMenuText>
+
+
+
+
+<!-- Empire -->
+
+	<EmpireEnlistLetterLabel>To Our Esteemed Vassal,
+
+By decree of {LEADER_nameDef}, Stellarch of {FACTION_name}, you are now entrusted with a noble duty. As one who now serves under the Empire's banner, you hold a sacred duty: to uphold our honor and extend our reach into the untamed fringes.
+
+Our outposts are extensions of imperial order. There, you may rest, resupply, and ready yourself for the tasks ahead. Yet remember, such privilege comes with expectation: devotion to the Empire and diligence in your duties.
+
+Conduct yourself with grace, enforce the will of the Empire, and bring order where there is none. Through your actions, you will find both glory and purpose. Serve well, and you will be remembered.
+
+— {LEADER_nameDef}
+Stellarch of {FACTION_name}</EmpireEnlistLetterLabel>
+
+	<EmpireEnlistRequrementsNotSatisfied>You need to have minimum 70 goodwill, currently you have only {0} goodwill.</EmpireEnlistRequrementsNotSatisfied>
+	
+	<EmpireMenuMissionsDesc>You enter a grand chamber adorned with gilded decor and shimmering banners. A polished board displays notices of treasonous plots, missing nobles, and decrees demanding swift action.</EmpireMenuMissionsDesc>
+
+
+	<EmpireProvisionsDesc>Provisions will give your caravan inventory the following every 24 hours:\n\n- ×2 Packaged survival meals\n- ×1 Lavish meal\n- ×1 Glitterworld medicine</EmpireProvisionsDesc>
+
+	<EmpireTurnInTraderName>Imperial Holding Facility</EmpireTurnInTraderName>
+
+	<EmpireProvisionsLabelApparelIssue>Trooper Gear</EmpireProvisionsLabelApparelIssue>
+
+	<EmpireProvisionsDescApparelIssue>Trooper Gear will give your caravan inventory the following every 30 days:\n\n- ×1 Steel longsword \n- ×1 Assault rifle \n- ×1 Gunlink \n- ×1 Recon armor</EmpireProvisionsDescApparelIssue>	
+		
+	<EmpirePartTimeJobLabel>Imperial labor</EmpirePartTimeJobLabel>
+
+	<EmpirePartTimeJobDesc>Earn $8 an hour working as an Imperial laborer. Earnings are halted when the faction is resting at night.</EmpirePartTimeJobDesc>	
+	
+	<EmpireHospitalLabel>Hospital</EmpireHospitalLabel>
+
+	<EmpireHospitalDesc>Check in with the hospital of this outpost. This service tends to all of your caravan members with glitterworld medicine. Immunity gain is also increased while your caravan is using the hospital.</EmpireHospitalDesc>
+
+	<EmpireTurnInDesc>Turn in suspected outlaws and deserters to holding facilities for trial in Imperial court.\n\nTurning over any hostile pawns do not result in a slavery debuff.</EmpireTurnInDesc>	
+
+	<EmpireResignLetterLabel>You have successfully resigned from {FACTION_name}. (-95 relations)</EmpireResignLetterLabel>
+	
+	<EmpireResignMenuText>You will resign from the Empire, effective immediately. (-95 in relations)</EmpireResignMenuText>
+
+
+	<EmpireProvisionsLabelPrestigeIssue>Noble Attire</EmpireProvisionsLabelPrestigeIssue>
+
+	<EmpireProvisionsDescPrestigeIssue>Noble Attire will give your caravan inventory the following every 20 days:\n\n- ×1 Formal vest \n- ×1 Formal shirt \n- ×1 Cape \n- ×1 Steel coronet \n- ×1 Pants</EmpireProvisionsDescPrestigeIssue>	
+	
+
+	<EmpireProvisionsLabelBestowerIssue>Bestower Gear</EmpireProvisionsLabelBestowerIssue>
+
+	<EmpireProvisionsDescBestowerIssue>Bestower Gear will give your caravan inventory the following every 60 days:\n\n- ×1 Eltex staff \n- ×1 Prestige robe\n- ×1 Hood</EmpireProvisionsDescBestowerIssue>	
+
+
+	<TitleRequirementKey>You need to become a Freeholder</TitleRequirementKey>
+	<TitleRequirementDesc>You need to become a Freeholder NOW!</TitleRequirementDesc>
+	<TitleRequirementLabel>You need to become a Freeholder later</TitleRequirementLabel>
+
+	<FavorLabel>Gain Honor</FavorLabel>
+	<FavorDesc>Gain Honor will give a chosen pawn a range of honor every 15 days:\n\n- ×5~10 Honor </FavorDesc>
+	
+	
+
+
+<!-- VFEP Mercenaries -->
+
+	<MercEnlistLetterLabel>To the New Blood,
+
+You made it into {FACTION_name}. That’s worth something—for now. Don’t expect handouts or sympathy here. We’re not family, and we’re not friends. We’re the ones who get the job done, no matter what it takes, and if you can’t pull your weight, you’re dead weight.
+
+Our bases are here to keep you in fighting shape—resupply, cash in, and move on. Don’t overstay your welcome, and don’t expect a warm bed. This isn’t a charity; it’s a machine. You’re a cog, and cogs that don’t turn get replaced.
+
+We fight for profit, power, and survival. Nothing else. Keep your eyes sharp, your weapon ready, and don’t cross anyone you can’t take down yourself. Weakness gets sniffed out fast here, and mercy isn’t in our vocabulary.
+
+There’s wealth and glory to be had for those who are strong enough to take it. Prove you’ve got what it takes—or don’t. Either way, someone’s walking away richer.
+
+— {LEADER_nameDef}
+Boss of {FACTION_name}</MercEnlistLetterLabel>
+
+	<MercEnlistRequrementsNotSatisfied>You need to have minimum 30 goodwill, currently you have only {0} goodwill.</MercEnlistRequrementsNotSatisfied>
+
+	<MercMenuMissionsDesc>You step into a grim outpost, walls scarred from gunfire and neglect. A worn board hangs crookedly, listing bounties, raid intel and desperate pleas from the weak—chances for anyone bold enough to answer.</MercMenuMissionsDesc>
+
+
+	<MercProvisionsDesc>Provisions will give your caravan inventory the following every 24 hours:\n\n- ×3 Packaged survival meals\n- ×1 Medicine\n- ×1 Go-juice</MercProvisionsDesc>
+
+	<MercTurnInTraderName>Mercenary Holding Facility</MercTurnInTraderName>
+
+	<MercProvisionsLabelApparelIssue>Mercenary Loadout</MercProvisionsLabelApparelIssue>
+
+	<MercProvisionsDescApparelIssue>Mercenary Loadout will give your caravan inventory the following every 30 days:\n\n- ×1 Bedroll\n- ×1 Steel knife \n- ×1 Assault \n- ×1 Flak jacket \n- ×1 Button-down shirt \n- ×1 Flak vest\n- ×1 Steel flak helmet\n- ×1 Flak pants</MercProvisionsDescApparelIssue>	
+		
+	<MercPartTimeJobLabel>Guard Duty</MercPartTimeJobLabel>
+
+	<MercPartTimeJobDesc>Earn $6 an hour working part-time with this outpost. Earnings are halted when the faction is resting at night.</MercPartTimeJobDesc>	
+
+	<MercTurnInDesc>Turn in suspected outlaws to holding facilities for trial in Outlander court.\n\nTurning over any hostile pawns do not result in a slavery debuff.</MercTurnInDesc>	
+
+	<MercResignLetterLabel>You have successfully resigned from {FACTION_name}. (-45 relations)</MercResignLetterLabel>
+	
+	<MercResignMenuText>You will resign from Mercenaries, effective immediately. (-45 in relations)</MercResignMenuText>
+
+	<MercTraining>Training: Mercenary</MercTraining>
+
+	<MercTrainingDesc>Train your caravan with hourly experience gain on the following skills:\n\n- Shooting\n- Melee\n- Medical\n- Social\n\nHourly experience gain stops when this faction is resting at night.</MercTrainingDesc>
+
+
+	<MercDropPodServiceDesc>Use this faction's drop pod service to travel by air! $800 cost.</MercDropPodServiceDesc>
+
+	<MercDropPodServiceRequirementDesc>You need $800 silver to cover all expenses.</MercDropPodServiceRequirementDesc>
+
+
+<!-- Tribes -->
+
+	<TribeEnlistLetterLabel>To the New Blood,
+
+You stand among the {FACTION_name} now, but don’t mistake that for safety. Out here, survival is earned with sweat, blood, and strength. We live by the will of the spirits and the strength of our tribe—show us your worth, or you won’t last long.
+
+Our campfires burn for those with the strongest of hearts. If you want food, tools, or shelter, you’ll earn them. Hunt with the pack, fight for the tribe, and bring something of value to our people. Fail, and the wilds will remind you what happens to those who are unworthy.
+
+You’ll find the tools to hunt, the fire to warm you, and the wisdom of elders to guide you. But take heed: what you take must be repaid in loyalty.
+
+We honor those who stand strong and bring glory to the tribe. You’ve chosen the path of survival, and now you must prove you have the will to walk it.
+
+— {LEADER_nameDef}
+Chieftain of {FACTION_name}</TribeEnlistLetterLabel>
+
+	<TribeEnlistRequrementsNotSatisfied>You need to have minimum 25 goodwill, currently you have only {0} goodwill.</TribeEnlistRequrementsNotSatisfied>
+
+	<TribeProvisionsDesc>Provisions will give your caravan inventory the following every 24 hours:\n\n- ×40 Pemmican\n- ×1 Herbal medicine\n- ×1 Psychite tea</TribeProvisionsDesc>
+
+	<TribeProvisionsLabelApparelIssue>Hunter Gear</TribeProvisionsLabelApparelIssue>
+
+	<TribeProvisionsDescApparelIssue>Hunter Gear will give your caravan inventory the following every 15 days:\n\n- ×1 Steel spear \n- ×1 Recurve bow \n- ×1 Tribalwear \n- ×1 War mask \n- ×1 Bedroll</TribeProvisionsDescApparelIssue>	
+		
+	<TribeHospitalLabel>Hospital</TribeHospitalLabel>
+
+	<TribeHospitalDesc>Check in with the hospital of this outpost. This service tends to all of your caravan members with herbal medicine. Immunity gain is also increased while your caravan is using the hospital.</TribeHospitalDesc>
+
+	<TribeResignLetterLabel>You have successfully resigned from {FACTION_name}. (-35 relations)</TribeResignLetterLabel>
+	
+	<TribeResignMenuText>You will resign from the Tribe, effective immediately. (-35 in relations)</TribeResignMenuText>
+
+
+<!-- Rim-Effect: Systems Alliance -->
+
+	<AllianceEnlistLetterLabel>Welcome to {FACTION_name}, Citizen.
+
+You’ve taken the first step toward a brighter future—for yourself and the galaxy. {FACTION_name} is more than a government; it’s a collective of hope, unity, and progress. Here, you are part of something greater than yourself, working for peace, prosperity, and order in a universe that desperately needs it.
+
+As an enlisted member of {FACTION_name}, your duty is clear: uphold the laws, protect the people, and safeguard civilization from chaos. The stars are vast and dangerous, but with courage and resolve, we stand firm.
+
+We offer you tools, training, and the support of billions. In return, we demand your loyalty, discipline, and unwavering commitment to the ideals of liberty and justice. Every choice you make reflects on us. Conduct yourself with honor, and remember: the actions of one can echo across the galaxy.
+
+Together, we are the light in the darkness. Serve well, and let that light shine.
+
+— {LEADER_nameDef}
+Commander of {FACTION_name}</AllianceEnlistLetterLabel>
+
+	<AllianceEnlistRequrementsNotSatisfied>You need to have minimum 70 goodwill, currently you have only {0} goodwill.</AllianceEnlistRequrementsNotSatisfied>
+	
+	<AllianceMenuMissionsDesc>You step into a high-tech briefing room. Displays flash with reports of colony distress calls, treason, missing officers, and calls for immediate action to uphold peace.</AllianceMenuMissionsDesc>
+
+
+	<AllianceProvisionsDesc>Provisions will give your caravan inventory the following every 24 hours:\n\n- ×2 Packaged survival meals\n- ×1 Lavish meal\n- ×1 Glitterworld medicine</AllianceProvisionsDesc>
+
+	<AllianceTurnInTraderName>Alliance Holding Facility</AllianceTurnInTraderName>
+
+	<AllianceProvisionsLabelApparelIssue>Marine Gear</AllianceProvisionsLabelApparelIssue>
+
+	<AllianceProvisionsDescApparelIssue>Marine Gear will give your caravan inventory the following every 30 days:\n\n- ×1 Alliance assault rifle \n- ×1 Light alliance armor \n- ×1 Light alliance helmet \n- Battle uniform</AllianceProvisionsDescApparelIssue>	
+		
+	<AlliancePartTimeJobLabel>Citizen labor</AlliancePartTimeJobLabel>
+
+	<AlliancePartTimeJobDesc>Earn $8 an hour working as a laborer. Earnings are halted when the faction is resting at night.</AlliancePartTimeJobDesc>	
+	
+	<AllianceHospitalLabel>Hospital</AllianceHospitalLabel>
+
+	<AllianceHospitalDesc>Check in with the hospital of this outpost. This service tends to all of your caravan members with glitterworld medicine. Immunity gain is also increased while your caravan is using the hospital.</AllianceHospitalDesc>
+
+	<AllianceTurnInDesc>Turn in suspected traitors and deserters to holding facilities for investigation and adjudication under law\n\nTurning over any hostile pawns do not result in a slavery debuff.</AllianceTurnInDesc>	
+
+	<AllianceResignLetterLabel>You have successfully resigned from {FACTION_name}. (-35 relations)</AllianceResignLetterLabel>
+	
+	<AllianceResignMenuText>You will resign from the Alliance, effective immediately. (-35 in relations)</AllianceResignMenuText>
+
+
+	<AllianceProvisionsLabelPrestigeIssue>Citizen Attire</AllianceProvisionsLabelPrestigeIssue>
+
+	<AllianceProvisionsDescPrestigeIssue>Citizen Attire will give your caravan inventory the following every 15 days:\n\n- ×1 Formal jacket \n- ×1 Formal shirt \n- ×1 Bowler hat\n- ×1 Pants</AllianceProvisionsDescPrestigeIssue>	
+	
+
+	<AllianceProvisionsLabelBestowerIssue>Alliance Terminal</AllianceProvisionsLabelBestowerIssue>
+
+	<AllianceProvisionsDescBestowerIssue>Alliance Terminal will give your caravan inventory the following every 60 days:\n\n- ×1 Alliance terminal</AllianceProvisionsDescBestowerIssue>	
+	
+
+<!-- Mort's Corporation -->
+
+
+	<CorpEnlistLetterLabel>Welcome to {FACTION_name} Employee.
+
+Congratulations on joining the galaxy’s leading innovator in excellence and opportunity. At {FACTION_name} we believe in empowering individuals to achieve greatness while driving the success of a brighter, more connected tomorrow.
+
+As a valued member of our team, you’re stepping into a world of limitless potential. Our state-of-the-art infrastructure, cutting-edge tools, and galaxy-wide network are here to support your success. From day one, you’ll be part of a dynamic ecosystem where ambition meets results and where talent like yours shapes the future.
+
+Here at {FACTION_name} you are the cornerstone of progress. Whether pioneering breakthroughs or supporting critical operations, your work ensures that we remain the gold standard in innovation and efficiency. Performance matters, and so do rewards—those who go above and beyond can expect stellar recognition and advancement opportunities.
+
+Let’s redefine what’s possible, together. Because at {FACTION_name} your potential isn’t just recognized—it’s celebrated.
+
+Welcome aboard. The stars are waiting!
+
+— {LEADER_nameDef}
+Chairman of {FACTION_name}</CorpEnlistLetterLabel>
+
+	<CorpEnlistRequrementsNotSatisfied>You need to have minimum 60 goodwill, currently you have only {0} goodwill.</CorpEnlistRequrementsNotSatisfied>
+	
+	<CorpMenuMissionsDesc>You enter a sleek operations hub. Holo-displays project urgent alerts: disrupted trade routes, lost assets, security breaches, and opportunities to secure the company's interests.</CorpMenuMissionsDesc>
+
+
+	<CorpProvisionsDesc>Provisions will give your caravan inventory the following every 24 hours:\n\n- ×2 Packaged survival meals\n- ×1 Nutrient paste meal\n- ×1 Wakeup</CorpProvisionsDesc>
+
+	<CorpTurnInTraderName>Corp Holding Facility</CorpTurnInTraderName>
+
+	<CorpProvisionsLabelApparelIssue>Security Gear</CorpProvisionsLabelApparelIssue>
+
+	<CorpProvisionsDescApparelIssue>Security Gear will give your caravan inventory the following every 30 days:\n\n- ×1 Charge rifle \n- ×1 Recon armor \n- ×1 Recon helmet</CorpProvisionsDescApparelIssue>	
+		
+	<CorpPartTimeJobLabel>Employee workshift</CorpPartTimeJobLabel>
+
+	<CorpPartTimeJobDesc>Earn $8 an hour working as an employee. Earnings are halted when the faction is resting at night.</CorpPartTimeJobDesc>	
+	
+	<CorpHospitalLabel>Hospital</CorpHospitalLabel>
+
+	<CorpHospitalDesc>Check in with the hospital of this outpost. This service tends to all of your caravan members with glitterworld medicine. Immunity gain is also increased while your caravan is using the hospital.</CorpHospitalDesc>
+
+	<CorpTurnInDesc>Report suspected defectors and disloyal employees to designated corporate compliance centers for thorough review and resolution under company policy.\n\nTurning over any hostile pawns do not result in a slavery debuff.</CorpTurnInDesc>	
+
+	<CorpResignLetterLabel>You have successfully resigned from {FACTION_name}. (-35 relations)</CorpResignLetterLabel>
+	
+	<CorpResignMenuText>You will resign from the Corporation, effective immediately. (-35 in relations)</CorpResignMenuText>
+
+
+	<CorpProvisionsLabelPrestigeIssue>Employee Uniform</CorpProvisionsLabelPrestigeIssue>
+
+	<CorpProvisionsDescPrestigeIssue>Employee Uniform will give your caravan inventory the following every 15 days:\n\n- ×1 Jacket \n- ×1 Button-down shirt \n- ×1 Bowler hat\n- ×1 Pants</CorpProvisionsDescPrestigeIssue>	
+	
+
+	<CorpProvisionsLabelBestowerIssue>Mechanitor Gear</CorpProvisionsLabelBestowerIssue>
+
+	<CorpProvisionsDescBestowerIssue>Mechanitor Gear will give your caravan inventory the following every 45 days:\n\n- ×1 Mechlink \n- ×1 Airwire Headset \n- ×1 Basic subcore</CorpProvisionsDescBestowerIssue>	
+	
+
+
+<!-- Insector Tribe (THE FACTION THAT I MADE YAYYYYYYYYYY) -->
+
+	<InsectorEnlistLetterLabel>To the New Broodling,
+
+You have been accepted into the {FACTION_name}, but do not mistake belonging for security. The hive thrives only when all its members contribute. Strength, cunning, and devotion will determine your place among us—or whether you survive at all.
+
+The brood demands unity. Bring food to the hatchlings, guard the tunnels, and prove your worth in the hunt. Fail, and the hive will not shelter the weak. Our survival depends on every drone doing their part.
+
+You will find the tools of the hive at your disposal—chitin-forged weapons, venom-tipped spears, and the wisdom of the Queen's council. But remember: everything we give comes with a price. Loyalty and labor are owed to the brood.
+
+Our ancestors’ whispers echo in the dark, honoring those who strengthen the hive. Show us that you are more than prey—that you are a true Insector, born of will and hunger. Prove your worth, or be devoured by the wild.
+
+— {LEADER_nameDef}
+Brood Chief of {FACTION_name}</InsectorEnlistLetterLabel>
+
+	<InsectorEnlistRequrementsNotSatisfied>You need to have minimum 25 goodwill, currently you have only {0} goodwill.</InsectorEnlistRequrementsNotSatisfied>
+
+	<InsectorProvisionsDesc>Provisions will give your caravan inventory the following every 24 hours:\n\n- ×40 Insect jelly\n- ×1 Herbal medicine\n- ×10 Royal insect jelly</InsectorProvisionsDesc>
+
+	<InsectorProvisionsLabelApparelIssue>Hunter Gear</InsectorProvisionsLabelApparelIssue>
+
+	<InsectorProvisionsDescApparelIssue>Hunter Gear will give your caravan inventory the following every 15 days:\n\n- ×1 Chitin spear \n- ×1 Recurve bow \n- ×1 Tribalwear \n- ×1 War mask \n- ×1 Bedroll</InsectorProvisionsDescApparelIssue>	
+		
+	<InsectorHospitalLabel>Hospital</InsectorHospitalLabel>
+
+	<InsectorHospitalDesc>Check in with the hospital of this outpost. This service tends to all of your caravan members with herbal medicine. Immunity gain is also increased while your caravan is using the hospital.</InsectorHospitalDesc>
+
+	<InsectorResignLetterLabel>You have successfully resigned from {FACTION_name}. (-35 relations)</InsectorResignLetterLabel>
+	
+	<InsectorResignMenuText>You will resign from the Tribe, effective immediately. (-35 in relations)</InsectorResignMenuText>
+
+	<InsectorPherocoreTitle>Request Pherocore</InsectorPherocoreTitle>
+
+	<InsectorPherocoreDesc>Request Pherocore will give your caravan inventory the following every 60 days:\n\n- ×1 Sorne pherocore</InsectorPherocoreDesc>
+
+
+
+<!-- Settlers -->
+
+	<SettlerEnlistLetterLabel>To the New Hand,
+
+Welcome to {FACTION_name}. Life out here isn’t easy, but with grit and determination, there’s a lot you can achieve. You’ve joined an organization built on hard work and trust—qualities we expect from every Settler under our banner.
+
+Our outposts are more than waystations; they’re lifelines. Stop by to restock on supplies, pick up your pay, and make use of the tools and facilities we’ve set up to keep you alive and capable. We look after our own, but remember: loyalty is earned, not given.
+
+Out here, your actions matter. Carry yourself with honor, respect the locals, and do what it takes to get the job done.
+
+The frontier has its dangers, but it also has its rewards. Go out there and make us proud.
+
+— {LEADER_nameDef}
+Leader of {FACTION_name}</SettlerEnlistLetterLabel>
+
+	<SettlerEnlistRequrementsNotSatisfied>You need to have minimum 45 goodwill, currently you have only {0} goodwill.</SettlerEnlistRequrementsNotSatisfied>
+	
+	<SettlerTurnInTraderName>Sheriff Holding Facility</SettlerTurnInTraderName>
+
+	<SettlerProvisionsLabelApparelIssue>Deputy Gear</SettlerProvisionsLabelApparelIssue>
+
+	<SettlerProvisionsDescApparelIssue>Deputy Gear will give your caravan inventory the following every 15 days:\n\n- ×1 Steel knife \n- ×1 Double action revolver \n- ×1 Duster \n- ×1 Cowboy hat \n- ×1 Vest\n- ×1 T-shirt\n- ×1 Bandana</SettlerProvisionsDescApparelIssue>	
+		
+	<SettlerHospitalLabel>Hospital</SettlerHospitalLabel>
+
+	<SettlerHospitalDesc>Check in with the hospital of this outpost. This service tends to all of your caravan members with industrial medicine. Immunity gain is also increased while your caravan is using the hospital.</SettlerHospitalDesc>
+
+	<SettlerTurnInDesc>Turn in suspected outlaws to holding facilities for trial in Settler court.\n\nTurning over any hostile pawns do not result in a slavery debuff.</SettlerTurnInDesc>	
+
+	<SettlerResignLetterLabel>You have successfully resigned from {FACTION_name}. (-25 relations)</SettlerResignLetterLabel>
+	
+	<SettlerResignMenuText>You will resign from the Settlers, effective immediately. (-25 in relations)</SettlerResignMenuText>
+
+
+<!-- Classical republics -->
+
+	<RepublicEnlistLetterLabel>To the Chosen Commoner
+
+Welcome to {FACTION_name}, a republic of virtue, order, and tradition. Here, every person has a role to play in the prosperity of the Senate and the glory of our people. By joining our ranks, you honor not only yourself but the generations who built this republic with their hands and their blood.
+
+As a commoner of {FACTION_name}, your duty is to protect our lands, uphold our laws, and serve the greater good. The Senate rewards courage, discipline, and loyalty—qualities that forge the backbone of our society. In return, you are given purpose, the tools to succeed, and the protection of a united people.
+
+Glory is earned, not given. Through your service, your name may one day echo in the halls of history, celebrated as a defender of our republic and its ideals. Stand proud, commoner, for you are now a part of something eternal.
+
+— {LEADER_nameDef}
+Senator of {FACTION_name}</RepublicEnlistLetterLabel>
+
+	<RepublicEnlistRequrementsNotSatisfied>You need to have minimum 35 goodwill, currently you have only {0} goodwill.</RepublicEnlistRequrementsNotSatisfied>
+
+	<RepublicProvisionsDesc>Provisions will give your caravan inventory the following every 24 hours:\n\n- ×25 Jerky\n- ×1 Herbal medicine\n- ×1 Opium</RepublicProvisionsDesc>
+
+	<RepublicProvisionsLabelApparelIssue>Legionary Equipment</RepublicProvisionsLabelApparelIssue>
+
+	<RepublicProvisionsDescApparelIssue>Legionary Equipment will give your caravan inventory the following every 15 days:\n\n- ×1 Bronze spatha \n- ×1 Scorpion \n- ×1 Heavy shield \n- ×1 Legionnaire Helmet \n- ×1 Legionnaire Armor</RepublicProvisionsDescApparelIssue>	
+		
+	<RepublicHospitalLabel>Hospital</RepublicHospitalLabel>
+
+	<RepublicHospitalDesc>Check in with the hospital of this outpost. This service tends to all of your caravan members with herbal medicine. Immunity gain is also increased while your caravan is using the hospital.</RepublicHospitalDesc>
+
+	<RepublicResignLetterLabel>You have successfully resigned from {FACTION_name}. (-25 relations)</RepublicResignLetterLabel>
+	
+	<RepublicResignMenuText>You will resign from the Republic, effective immediately. (-25 in relations)</RepublicResignMenuText>
+
+	<RepublicTurnInDesc>Deliver suspected outlaws to the judgment halls of the Republic, where their fate shall be weighed under the rule of law.</RepublicTurnInDesc>	
+
+	<RepublicTurnInTraderName>Republic Holding Facility</RepublicTurnInTraderName>
+
+	<RepublicMenuMissionsSelectQuest>Select a Quest: </RepublicMenuMissionsSelectQuest>
+
+	<RepublicMenuMissionsDesc>You enter a marble atrium, adorned with mosaics of heroic deeds. Scrolls display urgent missives of frontier skirmishes, treachery, lost envoys, and the Senate's call for swift action.</RepublicMenuMissionsDesc>
+
+	<RepublicMissionsLabel>Quests</RepublicMissionsLabel>
+
+	<RepublicMissionsDesc>Quests description</RepublicMissionsDesc>
+
+
+
+</LanguageData>
