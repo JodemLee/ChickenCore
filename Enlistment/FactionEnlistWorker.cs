@@ -1,6 +1,8 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -39,12 +41,16 @@ namespace  ChickenCore.Enlistment
 				Find.LetterStack.ReceiveLetter(def.enlistLetterTitleKey.Translate(toEnlist.Named("FACTION")),
 					def.enlistLetterLabelKey.Translate(toEnlist.Named("FACTION"), toEnlist.leader.Named("LEADER")), LetterDefOf.PositiveEvent);
 			}
-
-			SalaryInfo salaryInfo = new SalaryInfo
+            SalaryInfo salaryInfo = new SalaryInfo
 			{
 				lastPaidTick = Find.TickManager.TicksGame
 			};
-			factionOptions.factionsSalaries[def] = salaryInfo;
+            FavorInfo favorInfo = new FavorInfo
+            {
+                lastPaidTick = Find.TickManager.TicksGame
+            };
+            factionOptions.factionsSalaries[def] = salaryInfo;
+			factionOptions.factionsFavors[def] = favorInfo;
 			if (!factionOptions.factionsStorages.ContainsKey(def))
 			{
 				FactionStorage factionStorage = new FactionStorage
@@ -54,7 +60,7 @@ namespace  ChickenCore.Enlistment
 				factionOptions.factionsStorages[def] = factionStorage;
 			}
 			def.enlistedSoundDef?.PlayOneShotOnCamera();
-		}
+        }
 
 
         public virtual bool CanBuy(Faction toBuy, Caravan caravan, out string cannotReason)

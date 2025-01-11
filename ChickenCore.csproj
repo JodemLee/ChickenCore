@@ -28,7 +28,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Assemblies\</OutputPath>
+    <OutputPath>..\1.5\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enlistment\CaravanOptions.cs" />
+    <Compile Include="Enlistment\Dialog_ChoosePawnForFavor.cs" />
     <Compile Include="Enlistment\Dialog_Missions.cs" />
     <Compile Include="Enlistment\Dialog_ResignConfirmation.cs" />
     <Compile Include="Enlistment\EnlistMod.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Enlistment\QuestContainer.cs" />
     <Compile Include="Enlistment\QuestsContainer.cs" />
     <Compile Include="Enlistment\SalaryInfo.cs" />
+    <Compile Include="Enlistment\StatPart_CaravanImmunityGain.cs" />
     <Compile Include="Enlistment\StockGenerator_Pawns.cs" />
     <Compile Include="Enlistment\Window_Password.cs" />
     <Compile Include="Enlistment\WorldEnlistTracker.cs" />

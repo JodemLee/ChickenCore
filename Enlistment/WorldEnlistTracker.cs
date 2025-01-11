@@ -66,14 +66,15 @@ namespace  ChickenCore.Enlistment
             }
             if (optionDef.minRoyalTitle != null)
             {
-                bool hasMatchingTitle = PawnsFinder.AllMaps_FreeColonists
+                bool hasMatchingTitle = PawnsFinder.allMapsCaravansAndTravelingTransportPods_Alive_OfPlayerFaction_Result
                     .Any(pawn => pawn.story != null &&
-                                 pawn.royalty != null &&
-                                 pawn.royalty.HasTitle(optionDef.minRoyalTitle));
+                     pawn.royalty != null &&
+                     pawn.royalty.MostSeniorTitle != null &&
+                     pawn.royalty.MostSeniorTitle.def.seniority >= optionDef.minRoyalTitle.seniority);
 
                 if (!hasMatchingTitle)
                 {
-                    cannotEnlistReason = "No colonist in the player faction has the required royal title.";
+                    cannotEnlistReason = optionDef.minRoyalTitleRequirementKey.Translate(optionDef.minRoyalTitle);
                     return false;
                 }
             }

@@ -86,7 +86,7 @@ namespace  ChickenCore.Enlistment
 										if (caravanOptions.curWorkOption.silverGainPerHour.HasValue && Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
 										{
                                             FactionEnlistOptionsDef matchingDef = optionsDefs.FirstOrDefault();
-                                            Thing newSilver = ThingMaker.MakeThing(matchingDef.salaryDef);
+                                            Thing newSilver = ThingMaker.MakeThing(matchingDef.salaryDef) ?? ThingMaker.MakeThing(ThingDefOf.Silver);
                                             newSilver.stackCount = caravanOptions.curWorkOption.silverGainPerHour.Value;
 											CaravanInventoryUtility.GiveThing(caravan, newSilver);
 										}
@@ -318,7 +318,28 @@ namespace  ChickenCore.Enlistment
 
 							}
 
-							if (optionDef.provisionOptions != null)
+                            if (optionDef.favorIsEnabled)
+                            {
+                                Command_Action command_favor = new Command_Action
+                                {
+                                    defaultLabel = optionDef.favorLabelKey.Translate(faction.Named("FACTION")),
+                                    defaultDesc = optionDef.favorDescKey.Translate(faction.Named("FACTION")),
+                                    icon = ContentFinder<Texture2D>.Get(optionDef.favorButtonIconTexPath),
+                                    action = delegate
+                                    {
+                                        worldTracker.factionOptionsContainer[faction].factionsFavors[optionDef].GiveFavor(optionDef, caravan, faction);
+                                    },
+                                    Order = order
+                                };
+                                if (!worldTracker.factionOptionsContainer[faction].factionsFavors.TryGetValue(optionDef, out FavorInfo favorInfo) || !favorInfo.CanPayFavor(optionDef))
+                                {
+                                    command_favor.Disable();
+                                }
+                                yield return command_favor;
+                                order++;
+                            }
+
+                            if (optionDef.provisionOptions != null)
                             {
                                 provisionInfos ??= new Dictionary<int, ProvisionsInfo>();
                                 foreach (var button in GetProvisionButtons(provisionInfos, optionDef.provisionOptions, faction, caravan, order))

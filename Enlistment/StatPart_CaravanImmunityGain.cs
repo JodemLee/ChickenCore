@@ -2,7 +2,7 @@
 using RimWorld.Planet;
 using Verse;
 
-namespace  ChickenCore.Enlistment
+namespace ChickenCore.Enlistment
 {
     public class StatPart_CaravanImmunityGain : StatPart
     {
@@ -11,7 +11,7 @@ namespace  ChickenCore.Enlistment
             if (req.Thing is Pawn pawn)
             {
                 var caravan = pawn.GetCaravan();
-                if (caravan != null && !caravan.pather.Moving && !caravan.NightResting)
+                if (caravan != null && !caravan.pather.moving && !caravan.NightResting)
                 {
                     var settlement = Find.WorldObjects.SettlementAt(caravan.Tile);
                     if (settlement != null)
@@ -38,7 +38,7 @@ namespace  ChickenCore.Enlistment
             if (req.Thing is Pawn pawn)
             {
                 var caravan = pawn.GetCaravan();
-                if (caravan != null && !caravan.pather.Moving && !caravan.NightResting)
+                if (caravan != null && !caravan.pather.moving && !caravan.NightResting)
                 {
                     var settlement = Find.WorldObjects.SettlementAt(caravan.Tile);
                     if (settlement != null)
