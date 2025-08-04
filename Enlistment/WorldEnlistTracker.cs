@@ -1,6 +1,5 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -64,21 +63,6 @@ namespace  ChickenCore.Enlistment
                 cannotEnlistReason = optionDef.enlistedToHostileFactionKey.Translate(firstHostileFaction.Named("HOSTILEFACTION"));
                 return false;
             }
-            if (optionDef.minRoyalTitle != null)
-            {
-                bool hasMatchingTitle = PawnsFinder.allMapsCaravansAndTravelingTransportPods_Alive_OfPlayerFaction_Result
-                    .Any(pawn => pawn.story != null &&
-                     pawn.royalty != null &&
-                     pawn.royalty.MostSeniorTitle != null &&
-                     pawn.royalty.MostSeniorTitle.def.seniority >= optionDef.minRoyalTitle.seniority);
-
-                if (!hasMatchingTitle)
-                {
-                    cannotEnlistReason = optionDef.minRoyalTitleRequirementKey.Translate(optionDef.minRoyalTitle);
-                    return false;
-                }
-            }
-
             return true;
         }
         public bool EnlistedTo(Faction otherFaction, FactionEnlistOptionsDef options)
@@ -152,9 +136,10 @@ namespace  ChickenCore.Enlistment
             }
             return 0f;
         }
-        public override void FinalizeInit()
+
+        public override void FinalizeInit(bool fromLoad)
         {
-            base.FinalizeInit();
+            base.FinalizeInit(fromLoad);
             Instance = this;
         }
 
@@ -178,7 +163,7 @@ namespace  ChickenCore.Enlistment
                     FactionEnlistOptions extension = comp.parent.Faction?.def?.GetModExtension<FactionEnlistOptions>();
                     if (extension is null)
                     {
-                        worldObject.AllComps.Remove(comp);
+                        worldObject.comps.Remove(comp);
                     }
                 }
             }

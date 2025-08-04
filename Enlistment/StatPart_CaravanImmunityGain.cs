@@ -2,7 +2,7 @@
 using RimWorld.Planet;
 using Verse;
 
-namespace ChickenCore.Enlistment
+namespace  ChickenCore.Enlistment
 {
     public class StatPart_CaravanImmunityGain : StatPart
     {

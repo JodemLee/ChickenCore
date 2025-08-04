@@ -7,7 +7,6 @@ namespace  ChickenCore.Enlistment
     {
         public Dictionary<FactionEnlistOptionsDef, bool> factionsRecruiters = new Dictionary<FactionEnlistOptionsDef, bool>();
         public Dictionary<FactionEnlistOptionsDef, SalaryInfo> factionsSalaries = new Dictionary<FactionEnlistOptionsDef, SalaryInfo>();
-        public Dictionary<FactionEnlistOptionsDef, FavorInfo> factionsFavors = new Dictionary<FactionEnlistOptionsDef, FavorInfo>();
         public Dictionary<FactionEnlistOptionsDef, FactionStorage> factionsStorages = new Dictionary<FactionEnlistOptionsDef, FactionStorage>();
         public Dictionary<FactionEnlistOptionsDef, int> factionsReinforcementsLastTick = new Dictionary<FactionEnlistOptionsDef, int>();
         public Dictionary<FactionEnlistOptionsDef, QuestContainer> factionsWithQuests = new Dictionary<FactionEnlistOptionsDef, QuestContainer>();
@@ -17,7 +16,6 @@ namespace  ChickenCore.Enlistment
         {
             Scribe_Collections.Look(ref factionsRecruiters, "factionsRecruiters", LookMode.Def, LookMode.Value, ref factionKeys, ref boolValues);
             Scribe_Collections.Look(ref factionsSalaries, "factionsSalaries", LookMode.Def, LookMode.Deep, ref factionKeys2, ref salaryValues);
-            Scribe_Collections.Look(ref factionsFavors, "factionsFavors", LookMode.Def, LookMode.Deep, ref factionKeys7, ref favorValues);
             Scribe_Collections.Look(ref factionsStorages, "factionsStorages", LookMode.Def, LookMode.Deep, ref factionKeys3, ref storageValues);
             Scribe_Collections.Look(ref factionsReinforcementsLastTick, "factionsReinforcementsLastTick", LookMode.Def, LookMode.Value, ref factionKeys4, ref intValues);
             Scribe_Collections.Look(ref factionsWithQuests, "factionsWithQuests", LookMode.Def, LookMode.Deep, ref factionKeys5, ref questContainerValues);
@@ -31,7 +29,6 @@ namespace  ChickenCore.Enlistment
                 factionsReinforcementsLastTick ??= new Dictionary<FactionEnlistOptionsDef, int>();
                 factionsWithQuests ??= new Dictionary<FactionEnlistOptionsDef, QuestContainer>();
                 factionsBought = new Dictionary<FactionEnlistOptionsDef, FactionState>();
-                factionsFavors ??= new Dictionary<FactionEnlistOptionsDef, FavorInfo>();
             }
         }
 
@@ -52,8 +49,5 @@ namespace  ChickenCore.Enlistment
 
         private List<FactionEnlistOptionsDef> factionKeys6;
         private List<FactionState> boughtValues;
-
-        private List<FactionEnlistOptionsDef> factionKeys7;
-        private List<FavorInfo> favorValues;
     }
 }

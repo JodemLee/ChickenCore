@@ -31,7 +31,7 @@ namespace  ChickenCore.Enlistment
     public static class Patch_TryFindTile
     {
         public static WorldObject worldObject;
-        public static bool Prefix(ref bool __result, QuestNode_GetSiteTile __instance, Slate slate, ref int tile)
+        public static bool Prefix(ref bool __result, QuestNode_GetSiteTile __instance, Slate slate, ref PlanetTile tile)
         {
             if (worldObject != null && TryFindTile(worldObject, slate, __instance.preferCloserTiles, __instance.allowCaravans, __instance.clampRangeBySiteParts, __instance.sitePartDefs, out tile))
             {
@@ -41,9 +41,9 @@ namespace  ChickenCore.Enlistment
             return true;
         }
 
-        private static bool TryFindTile(WorldObject worldObject, Slate slate, SlateRef<bool> preferCloserTiles, SlateRef<bool> allowCaravans, SlateRef<bool?> clampRangeBySiteParts, SlateRef<IEnumerable<SitePartDef>> sitePartDefs, out int tile)
+        private static bool TryFindTile(WorldObject worldObject, Slate slate, SlateRef<bool> preferCloserTiles, SlateRef<bool> allowCaravans, SlateRef<bool?> clampRangeBySiteParts, SlateRef<IEnumerable<SitePartDef>> sitePartDefs, out PlanetTile tile)
         {
-            int nearThisTile = worldObject.Tile;
+            var nearThisTile = worldObject.Tile;
             int num = int.MaxValue;
             bool? value = clampRangeBySiteParts.GetValue(slate);
             if (value.HasValue && value.Value)
@@ -65,7 +65,7 @@ namespace  ChickenCore.Enlistment
                 var = new IntRange(Mathf.Min(var.min, num), Mathf.Min(var.max, num));
             }
             var tileMode = preferCloserTiles.GetValue(slate) ? TileFinderMode.Near : TileFinderMode.Random;
-            return TileFinder.TryFindNewSiteTile(out tile, var.min, var.max, allowCaravans.GetValue(slate), tileMode, nearThisTile);
+            return TileFinder.TryFindNewSiteTile(out tile, nearThisTile, var.min, var.max, allowCaravans.GetValue(slate), tileFinderMode: tileMode);
         }
     }
 
@@ -135,7 +135,7 @@ namespace  ChickenCore.Enlistment
                                     defaultLabel = optionsDef.reinforcementsButtonLabelKey.Translate(enlistedFaction),
                                     defaultDesc = optionsDef.reinforcementsButtonDescKey.Translate(enlistedFaction),
                                     icon = ContentFinder<Texture2D>.Get(optionsDef.reinforcementsButtonIconTexPath),
-                                    Disabled = !tracker.CanCallReinforcementFrom(enlistedFaction, optionsDef),
+                                    disabled = !tracker.CanCallReinforcementFrom(enlistedFaction, optionsDef),
                                     action = delegate
                                     {
                                         Find.Targeter.BeginTargeting(ForLoc(), delegate (LocalTargetInfo x)

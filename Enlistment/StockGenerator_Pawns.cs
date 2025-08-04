@@ -15,7 +15,7 @@ namespace  ChickenCore.Enlistment
 {
     public class StockGenerator_Pawns : StockGenerator
     {
-        public override IEnumerable<Thing> GenerateThings(int forTile, Faction faction = null)
+        public override IEnumerable<Thing> GenerateThings(PlanetTile forTile, Faction faction = null)
         {
             yield break;
         }

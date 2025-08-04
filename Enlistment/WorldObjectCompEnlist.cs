@@ -59,7 +59,7 @@ namespace  ChickenCore.Enlistment
 						CaravanOptions caravanOptions = GetCaravanOptions(caravan);
 						if (caravanOptions.curWorkOption != null)
 						{
-							if (caravan.pather.Moving || caravan.Destroyed || caravan.Tile != parent.Tile)
+							if (caravan.pather.moving || caravan.Destroyed || caravan.Tile != parent.Tile)
 							{
 								caravanOptions.Reset();
 							}
@@ -86,7 +86,7 @@ namespace  ChickenCore.Enlistment
 										if (caravanOptions.curWorkOption.silverGainPerHour.HasValue && Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
 										{
                                             FactionEnlistOptionsDef matchingDef = optionsDefs.FirstOrDefault();
-                                            Thing newSilver = ThingMaker.MakeThing(matchingDef.salaryDef) ?? ThingMaker.MakeThing(ThingDefOf.Silver);
+                                            Thing newSilver = ThingMaker.MakeThing(matchingDef.salaryDef);
                                             newSilver.stackCount = caravanOptions.curWorkOption.silverGainPerHour.Value;
 											CaravanInventoryUtility.GiveThing(caravan, newSilver);
 										}
@@ -188,7 +188,7 @@ namespace  ChickenCore.Enlistment
 						slate.Set("targetMineable", ThingDefOf.MineableGold);
 						slate.Set("worker", PawnsFinder.AllMaps_FreeColonists.FirstOrDefault());
 					}
-					if (newQuestCandidate.CanRun(slate))
+					if (newQuestCandidate.CanRun(slate, Find.World))
 					{
 						Quest quest = QuestGen.Generate(newQuestCandidate, slate);
 						generatedQuests.Add(quest);
@@ -245,7 +245,7 @@ namespace  ChickenCore.Enlistment
                                 {
                                     optionDef.Worker.Buy(faction, caravan);
                                 },
-                                Order = order
+                                order = order
                             };
                             if (!optionDef.Worker.CanBuy(faction, caravan, out string cannotBuyReason))
                             {
@@ -266,7 +266,7 @@ namespace  ChickenCore.Enlistment
 								{
 									optionDef.Worker.EnlistTo(faction);
 								},
-								Order = order
+								order = order
 							};
 							if (!worldTracker.CanEnlist(faction, optionDef, out string cannotEnlistReason))
 							{
@@ -290,7 +290,7 @@ namespace  ChickenCore.Enlistment
 										Dialog_Missions missionWindow = new Dialog_Missions(dianode, false, caravan, this, ContentFinder<Texture2D>.Get(optionDef.missionsBackgroundMenuTexPath), optionDef);
 										Find.WindowStack.Add(missionWindow);
 									},
-									Order = order
+									order = order
 								};
 								yield return command_Mission;
 								order++;
@@ -307,7 +307,7 @@ namespace  ChickenCore.Enlistment
 									{
 										worldTracker.factionOptionsContainer[faction].factionsSalaries[optionDef].GiveMoney(optionDef, caravan);
 									},
-									Order = order
+									order = order
 								};
 								if (!worldTracker.factionOptionsContainer[faction].factionsSalaries.TryGetValue(optionDef, out SalaryInfo salaryInfo) || !salaryInfo.CanPayMoney(optionDef))
 								{
@@ -318,28 +318,7 @@ namespace  ChickenCore.Enlistment
 
 							}
 
-                            if (optionDef.favorIsEnabled)
-                            {
-                                Command_Action command_favor = new Command_Action
-                                {
-                                    defaultLabel = optionDef.favorLabelKey.Translate(faction.Named("FACTION")),
-                                    defaultDesc = optionDef.favorDescKey.Translate(faction.Named("FACTION")),
-                                    icon = ContentFinder<Texture2D>.Get(optionDef.favorButtonIconTexPath),
-                                    action = delegate
-                                    {
-                                        worldTracker.factionOptionsContainer[faction].factionsFavors[optionDef].GiveFavor(optionDef, caravan, faction);
-                                    },
-                                    Order = order
-                                };
-                                if (!worldTracker.factionOptionsContainer[faction].factionsFavors.TryGetValue(optionDef, out FavorInfo favorInfo) || !favorInfo.CanPayFavor(optionDef))
-                                {
-                                    command_favor.Disable();
-                                }
-                                yield return command_favor;
-                                order++;
-                            }
-
-                            if (optionDef.provisionOptions != null)
+							if (optionDef.provisionOptions != null)
                             {
                                 provisionInfos ??= new Dictionary<int, ProvisionsInfo>();
                                 foreach (var button in GetProvisionButtons(provisionInfos, optionDef.provisionOptions, faction, caravan, order))
@@ -362,7 +341,7 @@ namespace  ChickenCore.Enlistment
 										Dialog_FactionStorage storageWindow = new Dialog_FactionStorage(dianode, false, caravan, worldTracker.factionOptionsContainer[faction].factionsStorages[optionDef]);
 										Find.WindowStack.Add(storageWindow);
 									},
-									Order = order
+									order = order
 								};
 								yield return command_Storage;
 								order++;
@@ -414,7 +393,7 @@ namespace  ChickenCore.Enlistment
 								{
 									command_MechSerum.Disable(optionDef.mechSerumCostRequirementKey.Translate());
 								}
-								command_MechSerum.Order = order;
+								command_MechSerum.order = order;
 								yield return command_MechSerum;
 								order++;
 							}
@@ -447,7 +426,7 @@ namespace  ChickenCore.Enlistment
 										defaultLabel = workOption.workLabelKey.Translate(faction.Named("FACTION")),
 										defaultDesc = workOption.workDescKey.Translate(faction.Named("FACTION")),
 										icon = ContentFinder<Texture2D>.Get(workOption.workButtonIconTexPath),
-										Order = order
+										order = order
 									};
 									yield return command_Training;
 									order++;
@@ -478,7 +457,7 @@ namespace  ChickenCore.Enlistment
 										Pawn bestPlayerNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, optionDef.turnInTraderKind);
 										Find.WindowStack.Add(new Dialog_Trade(bestPlayerNegotiator, pawnTrader));
 									},
-									Order = order
+									order = order
 								};
 								yield return command_TurnIn;
 								order++;
@@ -502,7 +481,7 @@ namespace  ChickenCore.Enlistment
 									command_DropPodService.Disable(optionDef.dropPodServiceCostRequirementKey.Translate());
 								}
 
-								command_DropPodService.Order = order;
+								command_DropPodService.order = order;
 								yield return command_DropPodService;
 								order++;
 							}
@@ -526,7 +505,7 @@ namespace  ChickenCore.Enlistment
                                     {
 										promotedByOptions[optionDef] = true;
                                     },
-                                    Order = order
+                                    order = order
                                 };
 								if (optionDef.promoteSkillRequirements.NullOrEmpty() is false && caravan.PawnsListForReading
 									.Where(x => x.IsColonist && EnlistUtils.PawnSatisfiesSkillRequirements(x, optionDef.promoteSkillRequirements)).Any() is false)
@@ -561,7 +540,7 @@ namespace  ChickenCore.Enlistment
 										var dict = optionDef.protocolOptions.ToDictionary(x => x.protocolHashKey, x => x.action);
                                         Find.WindowStack.Add(new Window_Password(dict, optionDef.protocolEnterText, optionDef.protocolInvalidWarning));
                                     },
-                                    Order = order
+                                    order = order
                                 };
                                 order++;
                             }
@@ -585,7 +564,7 @@ namespace  ChickenCore.Enlistment
 									Dialog_ResignConfirmation resignWindow = new Dialog_ResignConfirmation(dianode, false, this, optionDef);
 									Find.WindowStack.Add(resignWindow);
 								},
-								Order = order
+								order = order
 							};
 							yield return command_Resign;
 						}
@@ -614,7 +593,7 @@ namespace  ChickenCore.Enlistment
                     {
                         provisionInfo.GiveProvisions(provisionOption, caravan);
                     },
-                    Order = order
+                    order = order
                 };
                 if (!provisionInfo.CanGiveProvisions(provisionOption))
                 {
@@ -675,7 +654,7 @@ namespace  ChickenCore.Enlistment
 		{
 			return ChoseWorldTarget(target, parent.Tile, MaxLaunchDistance, TryLaunch, tmpCaravan);
 		}
-		public bool ChoseWorldTarget(GlobalTargetInfo target, int tile, int maxLaunchDistance, Action<int, TransportPodsArrivalAction, Caravan> launchAction, Caravan caravan)
+		public bool ChoseWorldTarget(GlobalTargetInfo target, int tile, int maxLaunchDistance, Action<int, TransportersArrivalAction, Caravan> launchAction, Caravan caravan)
 		{
 			if (!target.IsValid)
 			{
@@ -712,7 +691,7 @@ namespace  ChickenCore.Enlistment
 		}
 
 		private FactionEnlistOptionsDef curFactionEnlistOptionsDef;
-		public void TryLaunch(int destinationTile, TransportPodsArrivalAction arrivalAction, Caravan caravan)
+		public void TryLaunch(int destinationTile, TransportersArrivalAction arrivalAction, Caravan caravan)
 		{
 			int num = Find.WorldGrid.TraversalDistanceBetween(parent.Tile, destinationTile);
 			if (num <= MaxLaunchDistance)
@@ -726,22 +705,22 @@ namespace  ChickenCore.Enlistment
 				}
 				ExtractMoneyFromCaravan(caravan, curFactionEnlistOptionsDef.dropPodServiceCost);
 
-				ActiveDropPod activeDropPod = (ActiveDropPod)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
-				activeDropPod.Contents = new ActiveDropPodInfo();
-				activeDropPod.Contents.innerContainer.TryAddRangeOrTransfer(caravan.GetDirectlyHeldThings(), canMergeWithExistingStacks: true, destroyLeftover: true);
-				FlyShipLeaving obj = (FlyShipLeaving)SkyfallerMaker.MakeSkyfaller(ThingDefOf.DropPodLeaving, activeDropPod);
+				ActiveTransporter ActiveTransporter = (ActiveTransporter)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
+				ActiveTransporter.Contents = new ActiveTransporterInfo();
+				ActiveTransporter.Contents.innerContainer.TryAddRangeOrTransfer(caravan.GetDirectlyHeldThings(), canMergeWithExistingStacks: true, destroyLeftover: true);
+				FlyShipLeaving obj = (FlyShipLeaving)SkyfallerMaker.MakeSkyfaller(ThingDefOf.DropPodLeaving, ActiveTransporter);
 				obj.groupID = 1;
 				obj.destinationTile = destinationTile;
 				obj.arrivalAction = arrivalAction;
-				obj.worldObjectDef = WorldObjectDefOf.TravelingTransportPods;
+				obj.worldObjectDef = WorldObjectDefOf.TravellingTransporters;
 
-				TravelingTransportPods travelingTransportPods = (TravelingTransportPods)WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.TravelingTransportPods);
-				travelingTransportPods.Tile = base.parent.Tile;
-				travelingTransportPods.SetFaction(Faction.OfPlayer);
-				travelingTransportPods.destinationTile = destinationTile;
-				travelingTransportPods.arrivalAction = arrivalAction;
-				Find.WorldObjects.Add(travelingTransportPods);
-				travelingTransportPods.AddPod(activeDropPod.Contents, true);
+				TravellingTransporters TravellingTransporters = (TravellingTransporters)WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.TravellingTransporters);
+				TravellingTransporters.Tile = base.parent.Tile;
+				TravellingTransporters.SetFaction(Faction.OfPlayer);
+				TravellingTransporters.destinationTile = destinationTile;
+				TravellingTransporters.arrivalAction = arrivalAction;
+				Find.WorldObjects.Add(TravellingTransporters);
+				TravellingTransporters.AddTransporter(ActiveTransporter.contents, true);
 				caravan.Destroy();
 			}
 		}
@@ -782,7 +761,7 @@ namespace  ChickenCore.Enlistment
 				anything = true;
 				yield return new FloatMenuOption("FormCaravanHere".Translate(), delegate
 				{
-					TryLaunch(tile, new TransportPodsArrivalAction_FormCaravan(), caravan);
+					TryLaunch(tile, new TransportersArrivalAction_FormCaravan(), caravan);
 				});
 			}
 			//List<WorldObject> worldObjects = Find.WorldObjects.AllWorldObjects;

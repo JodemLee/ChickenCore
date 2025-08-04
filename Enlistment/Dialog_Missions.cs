@@ -1,5 +1,4 @@
 ﻿using LudeonTK;
-using LudeonTK;
 using RimWorld;
 using RimWorld.Planet;
 using System;
@@ -8,7 +7,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace  ChickenCore.Enlistment
+namespace ChickenCore.Enlistment
 {
     public class Dialog_Missions : Dialog_NodeTree
     {

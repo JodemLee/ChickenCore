@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using Verse;
 
-namespace ChickenCore.Enlistment
+namespace  ChickenCore.Enlistment
 {
 	public class BuyOutOption
 	{
@@ -37,7 +37,6 @@ namespace ChickenCore.Enlistment
 		public int? minGoodwillRequrementToEnlist;
         public int enlistGoodwillGain;
         public int minGoodwillUponEnlist;
-		
 
         public string enlistLetterTitleKey;
 		public string enlistLetterLabelKey;
@@ -145,19 +144,6 @@ namespace ChickenCore.Enlistment
         public List<ProtocolOption> protocolOptions;
 		public BuyOutOption buyOutOption;
 
-		[MayRequireRoyalty]
-        public RoyalTitleDef minRoyalTitle;
-        public string minRoyalTitleRequirementKey;
-		public int minFavorGainEnlist;
-        public string minFavorGainEnlistTitleKey;
-        public string minFavorGainEnlistLabelKey;
-		public string minFavorGainEnlistDescKey;
 
-        public bool favorIsEnabled;
-        public string favorLabelKey;
-        public string favorDescKey;
-        public string favorButtonIconTexPath;
-        public FloatRange favorRange;
-        public int favorPeriodDays;
     }
 }

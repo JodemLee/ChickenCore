@@ -134,7 +134,7 @@ namespace  ChickenCore.Enlistment
             {
                 var caravan = playerNegotiator.GetCaravan();
                 CaravanInventoryUtility.MoveAllInventoryToSomeoneElse(pawn, caravan.PawnsListForReading.Where(x => x.IsColonist).Except(pawn).ToList());
-                foreach (Pawn otherPawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
+                foreach (Pawn otherPawn in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonistsAndPrisoners)
                 {
                     if (factionOptionDef.turnInThought != null && pawn != otherPawn && otherPawn.IsColonist && otherPawn.needs.mood != null)
                     {
